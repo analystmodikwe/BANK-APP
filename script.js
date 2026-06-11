@@ -49,5 +49,14 @@ class savingsAccount extends Account {
     this.deposit(interest)
   }
 }
+// create acount (instance)
+const myAccount = new SavingsAccount ("Lesedi", 100000, 0.05);
 
-const myAccount = new savingsAccount ("Lesedi", 100000, 0,05)
+// creating the Dom
+const ownerName = document.getElementById("owner-name");
+const ownerBalance = document.getElementById("balance");
+const ownerInput = document.getElementById("amount-input");
+const depositButton = document.getElementById("deposit-btn");
+const withdrawButton = document.getElementById("withdraw-btn");
+const interestButton = document.getElementById("withdraw-btn");
+const historyList = document.getElementById("history-list");
