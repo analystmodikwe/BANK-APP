@@ -35,7 +35,7 @@ class ACCOUNT{
 }
 
 // savings account that is extending account
-class SavingsAccount extends Account {
+class savingsAccount extends Account {
   constructor(OWNER, BALANCE, interestRate) {
     super(OWNER, BALANCE); // call parent
     // your code
@@ -49,3 +49,5 @@ class SavingsAccount extends Account {
     this.deposit(interest)
   }
 }
+
+const myAccount = new savingsAccount ("Lesedi", 100000, 0,05)
