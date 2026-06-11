@@ -49,10 +49,10 @@ class savingsAccount extends Account {
     this.deposit(interest)
   }
 }
-// create acount (instance)
+// creating  my acount and adding DOM (instance)
 const myAccount = new SavingsAccount ("Lesedi", 100000, 0.05);
 
-// creating the Dom
+// creating the DOM
 const ownerName = document.getElementById("owner-name");
 const ownerBalance = document.getElementById("balance");
 const ownerInput = document.getElementById("amount-input");
@@ -60,3 +60,19 @@ const depositButton = document.getElementById("deposit-btn");
 const withdrawButton = document.getElementById("withdraw-btn");
 const interestButton = document.getElementById("withdraw-btn");
 const historyList = document.getElementById("history-list");
+
+// creating a function to update the screen
+ const updateDisplay = () =>{
+  ownerName.textContent = myAccount.OWNER;
+  ownerBalance.textContent = myAccount.OWNER;
+
+  // clear old history and replace
+  // creating a list that will show everthing
+  historyList.innerHTML = "";
+  myAccount.getHistory().forEach(Transaction => {
+    const list = document.createElement("li")
+    list.textContent = `${Transaction.type} : ${Transaction.AMOUNT}`
+    historyList.appendChild(li);
+    
+  });
+ }
