@@ -58,7 +58,7 @@ const ownerBalance = document.getElementById("balance");
 const ownerInput = document.getElementById("amount-input");
 const depositButton = document.getElementById("deposit-btn");
 const withdrawButton = document.getElementById("withdraw-btn");
-const interestButton = document.getElementById("withdraw-btn");
+const interestButton = document.getElementById("interest-btn");
 const historyList = document.getElementById("history-list");
 
 // creating a function to update the screen
@@ -88,3 +88,16 @@ depositButton.addEventListener("click", () =>{
   ownerInput.value ="";
 });
 
+// adding event listeners to withdraw button
+withdrawButton.addEventListener("click", () =>{
+  const amount = Number(ownerInput.value);
+  myAccount.withdraw(amount);
+  updateDisplay();
+  ownerInput.value ="";
+});
+
+// adding event listners to the interest button
+interestButton.addEventListener("click", () =>{
+  myAccount.addInterest();
+  updateDisplay()
+});
