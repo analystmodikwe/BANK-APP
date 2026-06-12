@@ -32,10 +32,10 @@ class ACCOUNT{
     return [...this.TRANSACTION]; // spread — return a copy, not the original
   }
 
-}
+};
 
 // savings account that is extending account
-class savingsAccount extends Account {
+class SavingsAccount extends ACCOUNT {
   constructor(OWNER, BALANCE, interestRate) {
     super(OWNER, BALANCE); // call parent
     // your code
@@ -48,7 +48,7 @@ class savingsAccount extends Account {
     
     this.deposit(interest)
   }
-}
+};
 // creating  my acount and adding DOM (instance)
 const myAccount = new SavingsAccount ("Lesedi", 100000, 0.05);
 
@@ -62,10 +62,10 @@ const interestButton = document.getElementById("interest-btn");
 const historyList = document.getElementById("history-list");
 
 // creating a function to update the screen
- const updateDisplay = () =>{
+const updateDisplay = () =>{
+
   ownerName.textContent = myAccount.OWNER;
   ownerBalance.textContent = myAccount.BALANCE;
-
   // clear old history and replace
   // creating a list that will show everthing
   historyList.innerHTML = "";
@@ -75,7 +75,7 @@ const historyList = document.getElementById("history-list");
     historyList.appendChild(list);
     
   });
- }
+};
 
 //  calling our function
 updateDisplay();
