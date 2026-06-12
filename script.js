@@ -102,3 +102,4 @@ interestButton.addEventListener("click", () =>{
   myAccount.addInterest();
   updateDisplay()
 });
+
