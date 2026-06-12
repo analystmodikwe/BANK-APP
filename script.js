@@ -64,7 +64,7 @@ const historyList = document.getElementById("history-list");
 // creating a function to update the screen
  const updateDisplay = () =>{
   ownerName.textContent = myAccount.OWNER;
-  ownerBalance.textContent = myAccount.OWNER;
+  ownerBalance.textContent = myAccount.BALANCE;
 
   // clear old history and replace
   // creating a list that will show everthing
@@ -72,7 +72,19 @@ const historyList = document.getElementById("history-list");
   myAccount.getHistory().forEach(Transaction => {
     const list = document.createElement("li")
     list.textContent = `${Transaction.type} : ${Transaction.AMOUNT}`
-    historyList.appendChild(li);
+    historyList.appendChild(list);
     
   });
  }
+
+//  calling our function
+updateDisplay();
+
+// adding event listners for deposit button
+depositButton.addEventListener("click", () =>{
+  const amount = Number(ownerInput.value);
+  myAccount.deposit(amount);
+  updateDisplay();
+  ownerInput.value ="";
+});
+
