@@ -69,9 +69,10 @@ const updateDisplay = () =>{
   // clear old history and replace
   // creating a list that will show everthing
   historyList.innerHTML = "";
-  myAccount.getHistory().forEach(Transaction => {
+  myAccount.getHistory().forEach(TRANSACTION => {
     const list = document.createElement("li")
-    list.textContent = `${Transaction.type} : ${Transaction.AMOUNT}`
+    list.textContent = `${TRANSACTION.type} : ${TRANSACTION.AMOUNT}`;
+    list.className = TRANSACTION.type;
     historyList.appendChild(list);
     
   });
