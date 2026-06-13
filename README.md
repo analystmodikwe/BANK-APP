@@ -1,5 +1,5 @@
 
-# 🏦 Mini Bank App
+ # 🏦 Mini Bank App
 
 A responsive browser-based banking app built with vanilla JavaScript, HTML, and CSS. Built as a hands-on project to practise Object-Oriented Programming, DOM manipulation, and event handling.
 
@@ -123,3 +123,4 @@ git clone https://github.com/your-username/mini-bank-app.git
 
 **Lesedi** — Junior Full-Stack Developer, South Africa  
 Building projects to practise JavaScript, OOP, and DOM manipulation.
+
