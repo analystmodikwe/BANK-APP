@@ -12,7 +12,7 @@ class ACCOUNT{
     // add to balance
     this.BALANCE += AMOUNT;
     // push to transaction history and record it
-    this.TRANSACTION.push({type :"deposit", AMOUNT, time :new Date().toLocaleDateString()});  
+    this.TRANSACTION.push({type :"deposit", AMOUNT, time :new Date().toLocaleString()});  
     console.log(`deposited: R${AMOUNT}. New Balance:${this.BALANCE} `)
   }
 
@@ -23,7 +23,7 @@ class ACCOUNT{
     }
     //only get here if there is enough funds
     this.BALANCE  -= AMOUNT;
-    this.TRANSACTION.push({type : "withdraw", AMOUNT, time :new Date().toLocaleDateString()});
+    this.TRANSACTION.push({type : "withdraw", AMOUNT, time :new Date().toLocaleString()});
     console.log(`Withdrew: R${AMOUNT}. Ramaining Balance: R${this.BALANCE}`)
     
   }
