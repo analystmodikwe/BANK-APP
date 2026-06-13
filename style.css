@@ -1,7 +1,179 @@
-.deposit {
-    color: green;
+
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap');
+
+/* ── Tokens ── */
+:root {
+  --bg:        #0a0e1a;
+  --card:      #111827;
+  --border:    #1e2a3a;
+  --gold:      #c9a84c;
+  --gold-dim:  #7a6230;
+  --text:      #f1f5f9;
+  --muted:     #64748b;
+  --green:     #22c55e;
+  --red:       #ef4444;
+  --radius:    14px;
 }
 
-.withdraw{
-    color: red;
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Base ── */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
 }
+
+/* ── Header ── */
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+/* ── Owner name ── */
+#owner-name {
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+/* ── Balance card — the signature element ── */
+.balance {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 3rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+#balance {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+  margin-top: 0.4rem;
+}
+
+/* ── Input + Buttons ── */
+.transactions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+
+#amount-input {
+  flex: 1 1 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#amount-input::placeholder { color: var(--muted); }
+#amount-input:focus { border-color: var(--gold-dim); }
+
+/* Remove number input arrows */
+#amount-input::-webkit-inner-spin-button,
+#amount-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+
+button {
+  flex: 1 1 30%;
+  padding: 0.75rem 0.5rem;
+  border: none;
+  border-radius: var(--radius);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+button:active { transform: scale(0.97); }
+button:hover  { opacity: 0.88; }
+
+#deposit-btn  { background: var(--green);    color: #fff; }
+#withdraw-btn { background: var(--red);      color: #fff; }
+#interest-btn { background: var(--gold);     color: #0a0e1a; }
+
+/* ── Transaction history ── */
+.transhistory {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+#history-list {
+  list-style: none;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#history-list li {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 3px solid transparent;
+}
+
+/* ── Colour coding ── */
+.deposit  { border-left-color: var(--green); color: var(--green); }
+.withdraw { border-left-color: var(--red);   color: var(--red);   }
+
+/* ── Responsive — mobile ── */
+@media (max-width: 480px) {
+  h1         { font-size: 1.3rem; }
+  #balance   { font-size: 2.2rem; }
+  .balance   { padding: 1.5rem; }
+
+  button {
+    flex: 1 1 100%; /* stack buttons on small screens */
+  }
+}
+

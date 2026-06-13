@@ -6,18 +6,21 @@
     <title>LESEDI'S BANK</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="background">
 
-    <h1>🏦 Mini Bank</h1>
-    <h2 id="owner-name"></h2>
-    <h3>Balance: R<span id="balance">0</span></h3>
+    <h1 >🏦 Mini Bank</h1>
+    <h2 id="owner-name" class="name"></h2>
+    <h3 class="balance">Balance: R<span id="balance">0</span></h3>
 
-    <input type="number" id="amount-input" placeholder="Enter amount" />
-    <button id="deposit-btn">Deposit</button>
-    <button id="withdraw-btn">Withdraw</button>
-    <button id="interest-btn">Add Interest</button>
+    <div class="transactions">
+        <input type="number" id="amount-input" placeholder="Enter amount" />
+        <button id="deposit-btn">Deposit</button>
+        <button id="withdraw-btn">Withdraw</button>
+        <button id="interest-btn">Add Interest</button>
+    </div>
+    
 
-    <h4>Transaction History</h4>
+    <h4 class="transhistory">Transaction History</h4>
     <!-- where transaction history will be shown -->
     <ul id="history-list"></ul>
 

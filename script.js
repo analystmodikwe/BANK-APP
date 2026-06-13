@@ -74,6 +74,10 @@ const updateDisplay = () =>{
     list.textContent = `${TRANSACTION.type} : ${TRANSACTION.AMOUNT} - ${TRANSACTION.time}`;
     list.className = TRANSACTION.type;
     historyList.appendChild(list);
+
+    list.innerHTML = `
+    <span>${TRANSACTION.type} — R${TRANSACTION.AMOUNT}</span>
+    <span style="font-size:0.75rem; opacity:0.5">${TRANSACTION.time}</span> `;
     
   });
 };
